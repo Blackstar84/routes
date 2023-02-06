@@ -3,7 +3,8 @@ import {
   Switch,
   Route,
   Redirect,
-  Link
+  Link,
+  Router
 } from 'react-router-dom';
 
 export class App extends Component {
@@ -11,9 +12,15 @@ export class App extends Component {
     return (
       <div>
         <nav>
-          {/*Aca deben ir los links de navegacion*/}
+          <a href={Page1}>Page 1</a>
+          <a href={Page2}>Page 2</a>          
         </nav>
-        {/* Aca tienes que agreager algo para que las rutas funcionen*/}
+        <Router>        
+          <Switch>
+            <Route path={Page1}></Route>
+            <Route path={Page2}></Route>
+          </Switch>
+        </Router>
       </div>
     )
   }
